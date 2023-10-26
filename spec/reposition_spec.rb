@@ -1,11 +1,18 @@
 
 require_relative '../lib/reposition'
 RSpec.describe Reposition do
-  describe '.reposition' do
-    let(:object) { double('object', attribute_name: nil) }
-    let(:preceding_object) { double('preceding_object', attribute_name: 10) }
-    let(:following_object) { double('following_object', attribute_name: 20) }
+  let(:object) { double('object', attribute_name: nil) }
+  let(:preceding_object) { double('preceding_object', attribute_name: 10) }
+  let(:following_object) { double('following_object', attribute_name: 20) }
 
+  describe '.reposition!' do
+    it 'calls reposition with save! option' do
+      expect(Reposition).to receive(:reposition).with(object: object, preceding_object: preceding_object, following_object: following_object, attribute_name: :attribute_name, options: { validate: true, save: 'save!' })
+      Reposition.reposition!(object: object, preceding_object: preceding_object, following_object: following_object, attribute_name: :attribute_name)
+    end
+  end
+
+  describe '.reposition' do
     context 'when preceding_object is nil' do
       it 'updates the attribute with following_object attribute value' do
         expect(object).to receive(:update_attribute).with(:attribute_name, 19)

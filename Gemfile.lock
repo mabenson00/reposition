@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    reposition (0.0.0)
+    reposition (0.0.2)
 
 GEM
   remote: https://rubygems.org/

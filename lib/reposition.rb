@@ -10,6 +10,11 @@ module Reposition
   #   - :save [string] Options are save and save!. The default is not to save.
   #
   # @return [Object] The repositioned object.
+
+  def self.reposition!(object:, preceding_object:, following_object:, attribute_name:, options: { validate: true })
+    reposition(object: object, preceding_object: preceding_object, following_object: following_object, attribute_name: attribute_name, options: options.merge(save: 'save!'))
+  end
+
   def self.reposition(object:, preceding_object:, following_object:, attribute_name:, options: { validate: true, save: nil })
     validate_arguments(object, preceding_object, following_object, attribute_name)
 
