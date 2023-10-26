@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "reposition"
-  s.version     = "0.0.3"
+  s.version     = "0.0.4"
   s.summary     = "Drag And Drop Reposition"
   s.description = "Repositioning of items based on the surrounding items."
   s.authors     = ["Michael Benson"]

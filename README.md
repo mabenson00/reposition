@@ -56,7 +56,7 @@ Reposition.reposition(
 - `attribute_name`: The attribute you're using to store the position (e.g., `:position`).
 - `options`: A hash with additional options. For now, it includes:
   - `:validate`: A boolean indicating if the object should be validated before saving. Defaults to true.
-  - `:save`: If set to "save", the object is saved. If set to "save!", the object is saved and will raise exceptions on failures. If not provided, the object isn't saved.
+  - `:save`: options: 'save', 'save!' 'save!' can also be accomplished by calling `Reposition.reposition!(...)`
 
 ## Installation
 
